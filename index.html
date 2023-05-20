@@ -24,16 +24,34 @@
             transform: translate(-50%, -50%);
             text-align: center;
             color: #fff;
+            opacity: 0;
+            animation: fade-in 2s forwards;
         }
 
         h1 {
             font-size: 48px;
+        }
+        
+        #gif {
+            width: 300px;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
     <div id="particles-js"></div>
     <div id="content">
+        <img id="gif" src="assets/gif/lean.gif" alt="Starting Soon GIF">
         <h1>Starting Soon</h1>
     </div>
 
