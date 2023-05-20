@@ -43,6 +43,14 @@
             animation: fade-out 2s forwards;
         }
 
+        #password-input {
+            margin-top: 20px;
+        }
+
+        #password-submit {
+            margin-top: 10px;
+        }
+
         @keyframes fade-in {
             0% {
                 opacity: 0;
@@ -66,6 +74,9 @@
     <div id="particles-js"></div>
     <div id="content">
         <h1>Starting Soon</h1>
+        <input type="password" id="password-input" placeholder="Enter the password">
+        <br>
+        <button id="password-submit">Submit</button>
     </div>
     <img id="gif" src="assets/gif/lean.gif" alt="Starting Soon GIF">
 
@@ -73,6 +84,22 @@
     <script>
         particlesJS.load('particles-js', 'particles.json', function() {
             console.log('Particles loaded');
+        });
+
+        function checkPassword() {
+            var enteredPassword = document.getElementById("password-input").value;
+            if (enteredPassword === "joonathan") {
+                window.location.href = "https://sl3vvr.github.io/start";
+            } else {
+                alert("Incorrect password!");
+            }
+        }
+
+        window.addEventListener("load", function() {
+            document.getElementById("password-submit").addEventListener("click", checkPassword);
+            document.getElementById("gif").addEventListener("animationend", function() {
+                document.getElementById("content").style.opacity = 1;
+            });
         });
     </script>
 </body>
