@@ -33,9 +33,14 @@
         }
         
         #gif {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             width: 300px;
             height: 300px;
-            margin-bottom: 20px;
+            opacity: 1;
+            animation: fade-out 2s forwards;
         }
 
         @keyframes fade-in {
@@ -46,14 +51,23 @@
                 opacity: 1;
             }
         }
+
+        @keyframes fade-out {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
     <div id="particles-js"></div>
     <div id="content">
-        <img id="gif" src="assets/gif/lean.gif" alt="Starting Soon GIF">
         <h1>Starting Soon</h1>
     </div>
+    <img id="gif" src="assets/gif/lean.gif" alt="Starting Soon GIF">
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
